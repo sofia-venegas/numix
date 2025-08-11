@@ -41,6 +41,43 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
+.inicio {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  padding: 60px 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(38, 38, 255, 0.6);
+}
+
+.inicio h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.inicio p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.inicio button {
+  background-color: #ffb703;
+  color: #222;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.inicio button:hover {
+  background-color: #fb8500;
+}
+
+
 button {
   background-color: #ffb703;
   color: white;
