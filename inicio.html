@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio - Matemáticas Divertidas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>¡Bienvenido a Matemáticas Divertidas!</h1>
+  </header>
+
+  <main>
+    <section class="actividad">
+      <h2>Practiquemos sumas</h2>
+      <p>Suma los siguientes números:</p>
+      <div id="problema"></div>
+
+      <input type="number" id="respuesta" placeholder="Escribe tu respuesta" />
+      <button id="verificar">Verificar</button>
+
+      <p id="mensaje"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>¡Sigue practicando y serás un genio de las matemáticas!</p>
+  </footer>
+
+  <script>
+    // Variables para la suma
+    const problemaDiv = document.getElementById('problema');
+    const respuestaInput = document.getElementById('respuesta');
+    const verificarBtn = document.getElementById('verificar');
+    const mensajeP = document.getElementById('mensaje');
+
+    let num1, num2, resultado;
+
+    function generarProblema() {
+      num1 = Math.floor(Math.random() * 10) + 1; // 1 a 10
+      num2 = Math.floor(Math.random() * 10) + 1;
+      resultado = num1 + num2;
+      problemaDiv.textContent = `${num1} + ${num2} = ?`;
+      respuestaInput.value = '';
+      mensajeP.textContent = '';
+    }
+
+    verificarBtn.addEventListener('click', () => {
+      const respuestaUsuario = parseInt(respuestaInput.value);
+      if (respuestaUsuario === resultado) {
+        mensajeP.style.color = 'green';
+        mensajeP.textContent = '¡Muy bien, lo lograste! 🎉';
+        generarProblema();
+      } else {
+        mensajeP.style.color = 'red';
+        mensajeP.textContent = 'Oops, intenta de nuevo. ¡Tú puedes! 💪';
+      }
+    });
+
+    // Generar el primer problema al cargar la página
+    generarProblema();
+  </script>
+</body>
+</html>
